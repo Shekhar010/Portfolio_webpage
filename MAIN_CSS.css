@@ -1,0 +1,60 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Oswald:wght@200&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box   ;
+}
+body{
+    background-color: antiquewhite;
+}
+
+nav{
+    padding: 0;
+    margin: 0;
+    background-color:transparent;
+    height: 80px;
+    width: 100%;
+
+}
+label.logo{
+    font-size: 35px;
+    color: aliceblue;
+    font-family: Agdasima;
+    line-height: 80px;
+    margin-left: 30px;
+    
+    
+}
+
+ 
+ nav ul{
+    float: right;
+    margin-right: 30px;
+ }
+
+ nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    text-transform: uppercase;
+    font-family: Agdasima;
+    font-size: 22px;
+    color: aliceblue;
+    
+ }
+ 
+ .circle {
+    max-width: 100%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .circle img {
+    width: 100%;
+    height: 80%;
+  }
+ 
