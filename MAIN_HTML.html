@@ -13,6 +13,7 @@
     </style>
     <link rel="stylesheet" href="MAIN_CSS.css"> <!-- Link to your CSS file -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="MAIN.js"><!-- javascript file-->
 </head>
 
 <body>
@@ -20,14 +21,15 @@
     <header>
         <!-- created a class for navigation bar -->
         <nav class="navbar">
+            <div class="Name">
+                <h3>Shekhar</h3>
+            </div>
             <!-- we have created an unordered list and inserted list item in it -->
-            <label class="logo">Shekhar</label>
             <ul>
-                <li href="home">Home</li>
-                <li href="about">About</li>
-                <li href="portfolio">Portfolio</li>
-                <li>Resume</li>
-                <li href="contact">Contact</li>
+
+                <li href="resume" class="resume">Resume</li>
+                <li class="about">About</li>
+                <li class="contact">Contact</li>
                 <!-- icon for triple strip / menu -->
                 <!-- <span>&#9776;</span> -->
             </ul>
@@ -35,12 +37,59 @@
     </header>
     <!-- main section -->
     <main>
+        <center>
+            <!-- starting content-->
+            <div class="content">
+
+                <!-- greeting lines -->
+                <div class="greet">
+                    <p class="hi">I'm, </p>
+                    <p class="intro">Shekhar Yadav</p>
+                    <p class="note">Hello there! I'm Shekhar Yadav, a passionate developer with a strong inclination
+                        towards technology and innovation. Currently, I'm pursuing my B.Tech in Computer Science and
+                        Engineering (CSE), where I'm learning the intricacies of this fascinating field. I firmly
+                        believe that technology has the power to shape a better world, and I'm enthusiastic about being
+                        part of this transformative journey.</p>
+                </div>
+
+                <!-- backgroud circle of profile pic-->
+                <div class="circle">
+
+                    <!-- profile picture -->
+                    <div class="profile-pic">
+
+                    </div>
+
+                </div>
+
+            </div>
+        </center>
+
+        <!-- middle social profiles bar  (social nav bar)-->
+        <center>
+            <div class="social">
+                <!-- nav bar for social profiles -->
+                <nav class="social-nav">
+                    <ul>
+                        <li><p class="icon-insta"><img src="Insta-icon.png" alt=""></p>Instagram</li>
+                        <li><p class="icon-linked"><img src="Linkedin-icon.png" alt=""></p>Linkedin</li>
+                        <li><p class="icon-figma"><img src="Icon-figma.png" alt=""></p>Figma</li>
+                    </ul>
+                </nav>
+            </div>
+        </center>
 
     </main>
-    <!-- footer of the page -->
-    <footer>
 
-    </footer>
+    <!-- footer of the page -->
+    <!-- <footer>
+        <div class="footer">
+            <div class="services">
+                <p><i class="fa-regular fa-copyright" style="color: #000000;"></i>2023 copyrights</p>
+            </div>
+            
+        </div>
+    </footer> -->
 </body>
 
 </html>

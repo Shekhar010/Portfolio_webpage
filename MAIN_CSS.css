@@ -1,60 +1,181 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Oswald:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Ysabeau+Office:wght@100;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Wix+Madefor+Text&family=Ysabeau+Office:wght@100;800&display=swap');
 *{
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style: none;
-    box-sizing: border-box   ;
-}
-body{
-    background-color: antiquewhite;
+    box-sizing: border-box;
 }
 
-nav{
-    padding: 0;
-    margin: 0;
-    background-color:transparent;
-    height: 80px;
-    width: 100%;
-
-}
-label.logo{
-    font-size: 35px;
-    color: aliceblue;
-    font-family: Agdasima;
-    line-height: 80px;
-    margin-left: 30px;
-    
-    
+.navbar {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    height: 90px;
+    box-shadow: 0px 8px 30px rgba(00, 0, 0, .1);
 }
 
+.Name {
+    height: 48px;
+    margin: 20px 25px;
+    padding: 12px 50px;
+    /* border: 4px solid transparent; */
+    font-family: 'Ysabeau Office', sans-serif;
+    font-weight: 800;
+    display: flex;
+    align-items: center
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.Name:hover {
+    /* border: 4px solid grey; */
+    color: rgb(31, 31, 31);
+}
+
+.navbar ul {
+    padding-right: 50px ;
+    display: flex;
+    margin-left: auto;
+    margin-right: 25px;
+    font-family: 'Wix Madefor Text', sans-serif;
+}
+
+.navbar ul li {
+    margin: 20px 5px 20px 5px;
+    padding: 12px 40px 12px 40px;
+    font-size: 18px;
+    border-radius: 30px;
+}
+
+.resume {
+    border: 1px solid black;
+}
+
+.resume:hover {
+    background-color: rgb(228, 228, 228);
+}
+
+.about {
+    border: 1px solid black;
+}
+
+.about:hover {
+    background-color: rgb(228, 228, 228);
+}
+
+.contact {
+    background-color: #166aea  ;
+    color: white;
+}
+
+.contact:hover {
+    background-color:#4489f1;
+}
  
- nav ul{
-    float: right;
-    margin-right: 30px;
- }
 
- nav ul li{
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
-    text-transform: uppercase;
-    font-family: Agdasima;
-    font-size: 22px;
-    color: aliceblue;
-    
- }
- 
- .circle {
-    max-width: 100%;
-    width: 200px;
-    height: 200px;
+/* main content class*/
+.content {
+    width: 65%;
+    height: 100%;
+    margin-top: 60px;
+    padding-top: 40px;
+    display: flex;
+}
+
+p.hi {
+    text-align: left;
+    font-size: 80px;
+    font-family: 'Ysabeau Office', sans-serif;
+    display: flex;
+    align-items: end;
+}
+
+p.intro {
+    text-align: left;
+    font-size: 80px;
+    font-family: 'Ysabeau Office', sans-serif;;
+    font-weight: 550;
+    margin-top: -30px;
+}
+
+p.note {
+   text-align: left;
+   width: 400px;
+   margin: 0px;
+   font-family: 'Ysabeau Office', sans-serif;
+   color: black;
+   font-size: 18px;
+
+}
+
+/* circle behind profile picture*/
+.circle {
+    height: 400px;
+    width: 400px;
     border-radius: 50%;
-    overflow: hidden;
-  }
-  .circle img {
+    background-color: #2a2a36;
+    margin-left: 60px;
+}
+
+/* profile picture */
+.profile-pic {
+    background-image: url("profile-pic2.png");
+    background-size: cover;
+    background-position: top;
+    transform: scale(1.5);
+    height: 350px;
+    width: 300px;
+    margin: 0px;
+    overflow: auto;
+}
+
+/* navigation bar for social profile*/
+.social {
+    height: 120px;
+    background-color: #3f3e4e;
+    margin-top: 38px;
+    width: 65%;
+    padding: 10px;
+    z-index: 2;
+    color: white;
+}
+
+.social ul {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    font-family: 'Ysabeau Office', sans-serif;
+}
+
+.social ul li {
+    height: 70px;
+    background-color: #2a2a36;
+    padding: 10px 20px;
+    margin: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.social ul li:hover {
+    background-color: #000000;
+}
+
+
+/* footer */
+
+footer {margin-top: 80px;
+    position: fixed; /* Use 'fixed' to make the footer stick to the bottom of the viewport */
+    left: 0;
+    bottom: 0;
     width: 100%;
-    height: 80%;
-  }
- 
+    height: 80px;
+    background-color: #f9f9f9; /* Replace with your desired background color */
+    padding: 20px; /* Replace with your desired padding for the footer */
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow at the top of the footer */
+}
+
+
