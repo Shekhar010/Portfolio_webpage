@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Ysabeau+Office:wght@100;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Wix+Madefor+Text&family=Ysabeau+Office:wght@100;800&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -8,11 +9,13 @@
     box-sizing: border-box;
 }
 
+/*navigation bar */
 .navbar {
     background-color: white;
     display: flex;
     align-items: center;
     height: 90px;
+    width: 100%;
     box-shadow: 0px 8px 30px rgba(00, 0, 0, .1);
 }
 
@@ -37,7 +40,7 @@ h3 {
 }
 
 .navbar ul {
-    padding-right: 50px ;
+    padding-right: 50px;
     display: flex;
     margin-left: auto;
     margin-right: 25px;
@@ -68,14 +71,14 @@ h3 {
 }
 
 .contact {
-    background-color: #166aea  ;
+    background-color: #166aea;
     color: white;
 }
 
 .contact:hover {
-    background-color:#4489f1;
+    background-color: #4489f1;
 }
- 
+
 
 /* main content class*/
 .content {
@@ -97,18 +100,19 @@ p.hi {
 p.intro {
     text-align: left;
     font-size: 80px;
-    font-family: 'Ysabeau Office', sans-serif;;
+    font-family: 'Ysabeau Office', sans-serif;
+    ;
     font-weight: 550;
     margin-top: -30px;
 }
 
 p.note {
-   text-align: left;
-   width: 400px;
-   margin: 0px;
-   font-family: 'Ysabeau Office', sans-serif;
-   color: black;
-   font-size: 18px;
+    text-align: left;
+    width: 400px;
+    margin: 0px;
+    font-family: 'Ysabeau Office', sans-serif;
+    color: black;
+    font-size: 18px;
 
 }
 
@@ -139,7 +143,7 @@ p.note {
     background-color: #3f3e4e;
     margin-top: 38px;
     width: 65%;
-    padding: 10px;
+    padding: 20px 10px 10px 0px;
     z-index: 2;
     color: white;
 }
@@ -164,18 +168,245 @@ p.note {
     background-color: #000000;
 }
 
+.social ul li p.icon-codechef img {
+    height: 45px;
+    border-radius: 15%;
+}
 
-/* footer */
+.social ul li p.icon-gfg img {
+    height: 40px;
+}
 
-footer {margin-top: 80px;
-    position: fixed; /* Use 'fixed' to make the footer stick to the bottom of the viewport */
-    left: 0;
-    bottom: 0;
-    width: 100%;
+/* 1st line */
+.line-1 {
+    margin: 80px 0px 0px;
+    width: 80%;
+    display: flex;
+}
+
+/* skill section */
+.skills {
+    height: 500px;
+    width: 65%;
+    margin: 50px 0px 0px;
+    background-color: white;
+}
+
+.skills p {
+    color: #2a2a36;
+    display: flex;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-size: 50px;
+}
+
+.skills h2 {
+    color: #2a2a36;
+    display: flex;
+    font-size: 70px;
+    font-weight: 600;
+    font-family: 'Ysabeau Office', sans-serif;
+    margin-top: -25px;
+}
+
+/* horizontal line */
+hr.skill-line {
+    border-color: black;
+}
+
+/* vertical line */
+.line {
+    height: 70px;
+    display: flex;
+}
+
+.line ul {
+    display: flex;
+}
+
+/* line-1 */
+.line-a {
+    border-left: 1px solid black;
     height: 80px;
-    background-color: #f9f9f9; /* Replace with your desired background color */
-    padding: 20px; /* Replace with your desired padding for the footer */
-    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow at the top of the footer */
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* line-2 */
+.line-b {
+    border-left: 1px solid black;
+    height: 80px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* line-3 */
+.line-c {
+    border-left: 1px solid black;
+    height: 80px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* line-4 */
+.line-d {
+    border-left: 1px solid black;
+    height: 80px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* line-5 */
+.line-e {
+    border-left: 1px solid black;
+    height: 80px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.java img {
+    height: 40px;
+}
+
+.java p {
+    font-size: 18px;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-weight: 100;
+    padding: 0px 15px 0px;
+    text-align: justify;
+}
+
+.html img {
+    height: 30px;
+    margin-top: 5px;
+
+}
+
+.html p {
+    font-size: 18px;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-weight: 100;
+    padding: 0px 15px 0px;
+    text-align: justify;
+    margin-top: 8px;
+}
+
+.css img {
+    height: 30px;
+    margin-top: 5px;
+
+}
+
+.css p {
+    font-size: 18px;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-weight: 100;
+    padding: 0px 15px 0px;
+    text-align: justify;
+    margin-top: 8px;
+}
+
+.javascript img {
+    height: 30px;
+    margin-top: 5px;
+
+}
+
+.javascript p {
+    font-size: 18px;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-weight: 100;
+    padding: 0px 15px 0px;
+    text-align: justify;
+    margin-top: 8px;
+}
+
+.github p {
+    font-size: 18px;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-weight: 100;
+    padding: 0px 15px 0px;
+    text-align: justify;
+    margin-top: -3px;
 }
 
 
+
+/* skill name */
+.skill-name {
+    display: flex;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-weight: 600;
+}
+
+.skill-name ul {
+    display: flex;
+}
+
+.skill-name ul li {
+    margin-top: 10px;
+    width: 201px;
+}
+
+
+
+/* horizontal line after skill section */
+hr.line-2 {
+    margin-top: 80px;
+    width: 80%;
+}
+
+
+
+
+/* project section */
+.project {
+    height: 400px;
+    width: 65%;
+    margin-top: 50px;
+}
+
+.heading-project p {
+    color: #2a2a36;
+    display: flex;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-size: 50px;
+}
+
+.heading-project h3 {
+    color: #2a2a36;
+    display: flex;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-size: 70px;
+    margin-top: -25px;
+}
+
+
+/* horizontal line after project section */
+hr.line-3 {
+    margin-top: 80px;
+    width: 80%;
+}
+
+/* work & experiance section */
+.experiance {
+    height: 400px;
+    width: 65%;
+    margin-top: 50px;
+}
+
+
+/* footer */
+footer {
+    margin-top: 80px;
+    color: white;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-weight: 600;
+    width: 100%;
+    height: 80px;
+    background-color: #2a2a36;
+    /* Replace with your desired background color */
+    padding: 20px;
+    /* Replace with your desired padding for the footer */
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+    /* Optional: Add a shadow at the top of the footer */
+}
