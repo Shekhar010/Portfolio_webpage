@@ -62,6 +62,15 @@ h3 {
     background-color: rgb(228, 228, 228);
 }
 
+.resume-c a:link {
+    color: black;
+}
+
+.resume-c a:visited {
+    color: black;
+    text-decoration: none;
+}
+
 .about {
     border: 1px solid black;
 }
@@ -177,6 +186,17 @@ p.note {
     height: 40px;
 }
 
+.social ul li p.icon-Github img {
+    height: 45px;
+}
+
+/* for the anchor tag*/
+.social a:visited {
+    color: white;
+    text-decoration: none;
+
+}
+
 /* 1st line */
 .line-1 {
     margin: 80px 0px 0px;
@@ -186,7 +206,7 @@ p.note {
 
 /* skill section */
 .skills {
-    height: 500px;
+    height: 1000px;
     width: 65%;
     margin: 50px 0px 0px;
     background-color: white;
@@ -211,6 +231,7 @@ p.note {
 /* horizontal line */
 hr.skill-line {
     border-color: black;
+    width: 105%;
 }
 
 /* vertical line */
@@ -261,6 +282,21 @@ hr.skill-line {
     height: 80px;
     margin-left: 100px;
     margin-right: 100px;
+}
+
+/* vertical line for more  skills */
+.line-f {
+    border-left: 2px solid black;
+    height: 452px;
+    margin-left: 31px;
+    margin-right: 100px;
+}
+
+/* horizontal line for more skills*/
+.skill-line-2 {
+    border: 1.5px solid black;
+    width: 105%;
+    margin-top: 50px;
 }
 
 .java img {
@@ -347,6 +383,39 @@ hr.skill-line {
     width: 201px;
 }
 
+.line-second {
+    height: 70px;
+    display: flex;
+}
+
+.line-second ul {
+    display: flex;
+}
+
+/* line-6 */
+.line-g {
+    border-left: 1px solid black;
+    height: 80px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* line-7 */
+.line-h {
+    border-left: 1px solid black;
+    height: 80px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* line-8 */
+.line-i {
+    border-left: 1px solid black;
+    height: 80px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
 
 
 /* horizontal line after skill section */
@@ -354,9 +423,6 @@ hr.line-2 {
     margin-top: 80px;
     width: 80%;
 }
-
-
-
 
 /* project section */
 .project {
