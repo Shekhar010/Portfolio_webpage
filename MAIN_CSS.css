@@ -1,478 +1,736 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Ysabeau+Office:wght@100;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Wix+Madefor+Text&family=Ysabeau+Office:wght@100;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
 * {
     margin: 0;
     padding: 0;
     text-decoration: none;
-    list-style: none;
+    list-style-type: none;
     box-sizing: border-box;
 }
 
-/*navigation bar */
+/* Background blur image */
+.background-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("farewell.jpg"); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+/* Navigation bar */
 .navbar {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.95);
     display: flex;
     align-items: center;
-    height: 90px;
+    height: 80px;
     width: 100%;
-    box-shadow: 0px 8px 30px rgba(00, 0, 0, .1);
+    padding: 0 80px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
 .Name {
-    height: 48px;
-    margin: 20px 25px;
-    padding: 12px 50px;
-    /* border: 4px solid transparent; */
-    font-family: 'Ysabeau Office', sans-serif;
-    font-weight: 800;
-    display: flex;
-    align-items: center
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
+    color: black;
+    font-size: 24px;
+    margin: 0 10px;
 }
 
 h3 {
-    font-size: 20px;
-}
-
-.Name:hover {
-    /* border: 4px solid grey; */
-    color: rgb(31, 31, 31);
-}
-
-.navbar ul {
-    padding-right: 50px;
-    display: flex;
-    margin-left: auto;
-    margin-right: 25px;
-    font-family: 'Wix Madefor Text', sans-serif;
-}
-
-.navbar ul li {
-    margin: 20px 5px 20px 5px;
-    padding: 12px 40px 12px 40px;
-    font-size: 18px;
-    border-radius: 30px;
-}
-
-.resume {
-    border: 1px solid black;
-}
-
-.resume:hover {
-    background-color: rgb(228, 228, 228);
-}
-
-.resume-c a:link {
+    font-size: clamp(18px, 5vw, 20px);
     color: black;
 }
 
-.resume-c a:visited {
+.navbar ul {
+    display: flex;
+    margin-left: auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-menu li {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: clamp(14px, 4vw, 16px);
+    color: black;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.resume {
+    border: 2px solid black;
+    color: black;
+    border-radius: 25px;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+.resume:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.resume-c a:link,
+.resume-c a:visited,
+.resume-c a:hover,
+.resume-c a:active {
     color: black;
     text-decoration: none;
 }
 
 .about {
-    border: 1px solid black;
+    border: 2px solid black;
+    color: black;
+    padding: 8px 20px;
+    cursor: pointer;
 }
 
 .about:hover {
-    background-color: rgb(228, 228, 228);
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .contact {
-    background-color: #166aea;
+    background-color: #2196f3;
     color: white;
+    padding: 8px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .contact:hover {
-    background-color: #4489f1;
+    background-color: #1976d2;
 }
 
+/* Hamburger menu - hidden by default, shown on small screens */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+}
 
-/* main content class*/
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive for mobile */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        height: calc(100vh - 80px);
+        width: 200px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+        border-radius: 0 0 0 10px;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu li {
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+/* Main content */
 .content {
-    width: 65%;
-    height: 100%;
-    margin-top: 60px;
-    padding-top: 40px;
+    width: 90%;
+    margin: 120px auto 20px;
+    padding: 20px 0;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Fixed typo */
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 p.hi {
-    text-align: left;
-    font-size: 80px;
-    font-family: 'Ysabeau Office', sans-serif;
-    display: flex;
-    align-items: end;
+    font-size: clamp(40px, 10vw, 60px);
+    font-family: 'Cabin', sans-serif; /* Fixed typo */
+    color: black;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 p.intro {
-    text-align: left;
-    font-size: 80px;
-    font-family: 'Ysabeau Office', sans-serif;
-    ;
-    font-weight: 550;
-    margin-top: -30px;
+    font-size: clamp(30px, 8vw, 40px);
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 p.note {
-    text-align: left;
-    width: 400px;
-    margin: 0px;
-    font-family: 'Ysabeau Office', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    max-width: 600px;
     color: black;
-    font-size: 18px;
-
+    font-size: clamp(14px, 4vw, 16px);
+    text-align: center;
+    line-height: 1.5;
+    margin: 20px 0;
+    padding: 0 15px;
 }
 
-/* circle behind profile picture*/
+/* Circle behind profile picture */
 .circle {
-    height: 400px;
-    width: 400px;
+    width: clamp(250px, 50vw, 300px);
+    height: clamp(250px, 50vw, 300px); /* Fixed typo to make it a proper circle */
     border-radius: 50%;
-    background-color: #2a2a36;
-    margin-left: 60px;
-}
-
-/* profile picture */
-.profile-pic {
-    background-image: url("profile-pic2.png");
+    border: 5px solid #2196f3; /* Add a border for better visibility */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    background-image: url("background-image.jpg"); /* Use the same background image */
     background-size: cover;
-    background-position: top;
-    transform: scale(1.5);
-    height: 350px;
-    width: 300px;
-    margin: 0px;
-    overflow: auto;
+    background-position: center;
 }
 
-/* navigation bar for social profile*/
+/* Profile picture */
+.profile-pic {
+    width: clamp(200px, 45vw, 250px);
+    height: clamp(200px, 45vw, 250px);
+    background-image: url("farewell.jpg");
+    background-size: 100%; /* zoom in */
+    background-position: 10% center; /* move image to the right, centered vertically */
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* Social navigation bar */
 .social {
-    height: 120px;
-    background-color: #3f3e4e;
-    margin-top: 38px;
-    width: 65%;
-    padding: 20px 10px 10px 0px;
-    z-index: 2;
+    width: 90%;
+    height: auto;
+    background-color: rgba(42, 50, 58, 0.9); /* Slightly transparent */
+    margin: 20px auto;
+    padding: 10px 0;
     color: white;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
 }
 
 .social ul {
     display: flex;
-    align-items: center;
-    vertical-align: middle;
-    font-family: 'Ysabeau Office', sans-serif;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
 }
 
 .social ul li {
-    height: 70px;
-    background-color: #2a2a36;
-    padding: 10px 20px;
-    margin: 10px 20px;
+    background-color: #222b2e;
+    margin: 10px;
+    padding: 8px 15px;
     display: flex;
     align-items: center;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    height: 50px; /* Fixed height for alignment */
 }
 
 .social ul li:hover {
-    background-color: #000000;
+    background-color: #111;
 }
 
-.social ul li p.icon-codechef img {
-    height: 45px;
-    border-radius: 15%;
-}
-
-.social ul li p.icon-gfg img {
-    height: 40px;
-}
-
-.social ul li p.icon-Github img {
-    height: 45px;
-}
-
-/* for the anchor tag*/
-.social a:visited {
+.social ul li a {
+    display: flex;
+    align-items: center;
     color: white;
     text-decoration: none;
-
 }
 
-/* 1st line */
-.line-1 {
-    margin: 80px 0px 0px;
+.social ul li span.icon-gfg img {
+    height: 35px; /* Fixed size for all icons */
+}
+
+.social ul li span.icon-Github img, 
+.social ul li span.icon-leetcode img, 
+.social ul li span.icon-linked img {
+    height: 35px; /* Fixed size for all icons */
+}
+
+.social ul li span {
+    margin-left: 8px;
+    font-size: clamp(14px, 4vw, 16px);
+}
+
+/* Line separator */
+.line-1, .line-2, .line-3 {
     width: 80%;
-    display: flex;
+    margin: 40px auto;
+    border-color: #333;
+    border-style: solid;
+    opacity: 0.5;
 }
 
-/* skill section */
+/* Skills section */
 .skills {
-    height: 1000px;
-    width: 65%;
-    margin: 50px 0px 0px;
-    background-color: white;
+    width: 90%;
+    height: auto;
+    margin: 40px auto;
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .skills p {
-    color: #2a2a36;
-    display: flex;
-    font-family: 'Ysabeau Office', sans-serif;
-    font-size: 50px;
+    color: black;
+    font-family: 'Cabin', sans-serif;
+    font-size: clamp(30px, 8vw, 40px);
+    text-align: center;
 }
 
 .skills h2 {
-    color: #2a2a36;
-    display: flex;
-    font-size: 70px;
-    font-weight: 600;
-    font-family: 'Ysabeau Office', sans-serif;
-    margin-top: -25px;
+    color: black;
+    font-family: 'Cabin', sans-serif;
+    font-size: clamp(40px, 10vw, 60px);
+    font-weight: bold;
+    text-align: center;
+    margin-top: -10px;
 }
 
-/* horizontal line */
-hr.skill-line {
-    border-color: black;
-    width: 105%;
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
 }
 
-/* vertical line */
-.line {
-    height: 70px;
-    display: flex;
+.skill-item {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
 }
 
-.line ul {
-    display: flex;
+.skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* line-1 */
-.line-a {
-    border-left: 1px solid black;
-    height: 80px;
-    margin-left: 100px;
-    margin-right: 100px;
+.skill-item img {
+    height: clamp(30px, 8vw, 35px);
+    margin-bottom: 8px;
 }
 
-/* line-2 */
-.line-b {
-    border-left: 1px solid black;
-    height: 80px;
-    margin-left: 100px;
-    margin-right: 100px;
+.skill-item h4 {
+    font-size: clamp(16px, 4vw, 18px);
+    color: black;
+    font-family: 'Cabin', sans-serif;
+    margin-bottom: 8px;
 }
 
-/* line-3 */
-.line-c {
-    border-left: 1px solid black;
-    height: 80px;
-    margin-left: 100px;
-    margin-right: 100px;
+.skill-item p {
+    font-size: clamp(12px, 3.5vw, 14px);
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 8px;
 }
 
-/* line-4 */
-.line-d {
-    border-left: 1px solid black;
-    height: 80px;
-    margin-left: 100px;
-    margin-right: 100px;
+.progress-bar {
+    background-color: #ddd;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-/* line-5 */
-.line-e {
-    border-left: 1px solid black;
-    height: 80px;
-    margin-left: 100px;
-    margin-right: 100px;
+.progress {
+    background-color: #2196f3;
+    height: 100%;
+    transition: width 0.5s ease;
 }
 
-/* vertical line for more  skills */
-.line-f {
-    border-left: 2px solid black;
-    height: 452px;
-    margin-left: 31px;
-    margin-right: 100px;
-}
-
-/* horizontal line for more skills*/
-.skill-line-2 {
-    border: 1.5px solid black;
-    width: 105%;
-    margin-top: 50px;
-}
-
-.java img {
-    height: 40px;
-}
-
-.java p {
-    font-size: 18px;
-    font-family: 'Ysabeau Office', sans-serif;
-    font-weight: 100;
-    padding: 0px 15px 0px;
-    text-align: justify;
-}
-
-.html img {
-    height: 30px;
-    margin-top: 5px;
-
-}
-
-.html p {
-    font-size: 18px;
-    font-family: 'Ysabeau Office', sans-serif;
-    font-weight: 100;
-    padding: 0px 15px 0px;
-    text-align: justify;
-    margin-top: 8px;
-}
-
-.css img {
-    height: 30px;
-    margin-top: 5px;
-
-}
-
-.css p {
-    font-size: 18px;
-    font-family: 'Ysabeau Office', sans-serif;
-    font-weight: 100;
-    padding: 0px 15px 0px;
-    text-align: justify;
-    margin-top: 8px;
-}
-
-.javascript img {
-    height: 30px;
-    margin-top: 5px;
-
-}
-
-.javascript p {
-    font-size: 18px;
-    font-family: 'Ysabeau Office', sans-serif;
-    font-weight: 100;
-    padding: 0px 15px 0px;
-    text-align: justify;
-    margin-top: 8px;
-}
-
-.github p {
-    font-size: 18px;
-    font-family: 'Ysabeau Office', sans-serif;
-    font-weight: 100;
-    padding: 0px 15px 0px;
-    text-align: justify;
-    margin-top: -3px;
-}
-
-
-
-/* skill name */
-.skill-name {
-    display: flex;
-    font-family: 'Ysabeau Office', sans-serif;
-    font-weight: 600;
-}
-
-.skill-name ul {
-    display: flex;
-}
-
-.skill-name ul li {
-    margin-top: 10px;
-    width: 201px;
-}
-
-.line-second {
-    height: 70px;
-    display: flex;
-}
-
-.line-second ul {
-    display: flex;
-}
-
-/* line-6 */
-.line-g {
-    border-left: 1px solid black;
-    height: 80px;
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
-/* line-7 */
-.line-h {
-    border-left: 1px solid black;
-    height: 80px;
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
-/* line-8 */
-.line-i {
-    border-left: 1px solid black;
-    height: 80px;
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
-
-
-/* horizontal line after skill section */
-hr.line-2 {
-    margin-top: 80px;
-    width: 80%;
-}
-
-/* project section */
+/* Project section */
 .project {
-    height: 400px;
-    width: 65%;
-    margin-top: 50px;
+    width: 90%;
+    height: auto;
+    margin: 40px auto;
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .heading-project p {
-    color: #2a2a36;
-    display: flex;
-    font-family: 'Ysabeau Office', sans-serif;
-    font-size: 50px;
+    color: black;
+    font-family: 'Cabin', sans-serif;
+    font-size: clamp(30px, 8vw, 40px);
+    text-align: center;
 }
 
 .heading-project h3 {
-    color: #2a2a36;
+    color: black;
+    font-family: 'Cabin', sans-serif;
+    font-size: clamp(40px, 10vw, 60px);
+    text-align: center;
+    margin-top: -10px;
+}
+
+.project-list ul {
     display: flex;
-    font-family: 'Ysabeau Office', sans-serif;
-    font-size: 70px;
-    margin-top: -25px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
-
-/* horizontal line after project section */
-hr.line-3 {
-    margin-top: 80px;
-    width: 80%;
-}
-
-/* work & experiance section */
-.experiance {
-    height: 400px;
-    width: 65%;
-    margin-top: 50px;
-}
-
-
-/* footer */
-footer {
-    margin-top: 80px;
-    color: white;
-    font-family: 'Ysabeau Office', sans-serif;
-    font-weight: 600;
+.project-list ul li {
     width: 100%;
-    height: 80px;
-    background-color: #2a2a36;
-    /* Replace with your desired background color */
+    margin: 15px 0;
     padding: 20px;
-    /* Replace with your desired padding for the footer */
-    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
-    /* Optional: Add a shadow at the top of the footer */
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.project-list ul li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-list ul li h4 {
+    font-size: clamp(18px, 5vw, 22px);
+    color: #2196f3; /* Highlight color */
+    margin-bottom: 8px;
+}
+
+.project-list ul li h5 {
+    font-size: clamp(16px, 4vw, 18px);
+    color: black;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.project-list ul li ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.project-list ul li ul li {
+    font-size: clamp(14px, 3.5vw, 16px);
+    color: black;
+    text-align: justify;
+    padding: 5px 0;
+}
+
+/* Experience section */
+.experience {
+    width: 90%;
+    height: auto;
+    margin: 40px auto;
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.experience-list ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.experience-list ul li {
+    width: 100%;
+    margin: 15px 0;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.experience-list ul li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.experience-list ul li h4 {
+    font-size: clamp(18px, 5vw, 22px);
+    color: #2196f3; /* Highlight color */
+    margin-bottom: 8px;
+}
+
+.experience-list ul li h5 {
+    font-size: clamp(16px, 4vw, 18px);
+    color: black;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.experience-list ul li ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.experience-list ul li ul li {
+    font-size: clamp(14px, 3.5vw, 16px);
+    color: black;
+    text-align: justify;
+    padding: 5px 0;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    height: auto;
+    background-color: rgba(26, 37, 41, 0.9); /* Slightly transparent */
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 10px 15px;
+    }
+
+    .Name {
+        font-size: 20px;
+        margin: 0 10px;
+        padding: 10px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .resume, .about, .contact {
+        border: none;
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    .contact {
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .content {
+        margin-top: 100px;
+        padding: 15px;
+    }
+
+    p.hi {
+        font-size: clamp(30px, 8vw, 40px);
+    }
+
+    p.intro {
+        font-size: clamp(25px, 7vw, 35px);
+        margin-top: -5px;
+    }
+
+    p.note {
+        font-size: clamp(12px, 3.5vw, 14px);
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .circle {
+        width: clamp(150px, 40vw, 200px);
+        height: clamp(150px, 40vw, 200px);
+    }
+
+    .profile-pic {
+        width: clamp(120px, 35vw, 160px);
+        height: clamp(120px, 35vw, 160px);
+    }
+
+    .social {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .social ul li {
+        margin: 5px;
+        padding: 8px 12px;
+        height: 45px; /* Adjusted for smaller screens */
+    }
+
+    .social ul li span.icon-gfg img,
+    .social ul li span.icon-Github img,
+    .social ul li span.icon-leetcode img,
+    .social ul li span.icon-linked img {
+        height: 30px;
+    }
+
+    .skills, .project, .experience {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .skill-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .skill-item {
+        padding: 12px;
+    }
+
+    .project-list ul li, .experience-list ul li {
+        padding: 15px;
+    }
+
+    .project-list ul li h4, .experience-list ul li h4 {
+        font-size: clamp(16px, 4.5vw, 18px);
+    }
+
+    .project-list ul li h5, .experience-list ul li h5 {
+        font-size: clamp(14px, 4vw, 16px);
+    }
+
+    .project-list ul li ul li, .experience-list ul li ul li {
+        font-size: clamp(12px, 3.5vw, 14px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .Name {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .hamburger span {
+        width: 20px;
+        height: 2px;
+        margin: 4px 0;
+    }
+
+    .nav-menu {
+        top: 70px;
+    }
+
+    p.hi {
+        font-size: clamp(25px, 7vw, 30px);
+    }
+
+    p.intro {
+        font-size: clamp(20px, 6vw, 25px);
+    }
+
+    p.note {
+        font-size: clamp(11px, 3vw, 12px);
+    }
+
+    .circle {
+        width: clamp(120px, 35vw, 150px);
+        height: clamp(120px, 35vw, 150px);
+    }
+
+    .profile-pic {
+        width: clamp(100px, 30vw, 120px);
+        height: clamp(100px, 30vw, 120px);
+    }
+
+    .social ul li {
+        padding: 6px 10px;
+        height: 40px; /* Adjusted for smaller screens */
+    }
+
+    .social ul li span.icon-gfg img,
+    .social ul li span.icon-Github img,
+    .social ul li span.icon-leetcode img,
+    .social ul li span.icon-linked img {
+        height: 25px;
+    }
+
+    .skill-item img {
+        height: clamp(25px, 7vw, 30px);
+    }
+
+    .skill-item h4 {
+        font-size: clamp(14px, 3.5vw, 16px);
+    }
+
+    .skill-item p {
+        font-size: clamp(11px, 3vw, 12px);
+    }
 }
